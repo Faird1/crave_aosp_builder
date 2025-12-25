@@ -1,4 +1,4 @@
-#
+ #
 # Copyright (C) 2024-2025 Antonino Scordino
 # Copyright (C) 2024-2025 Souhrud Reddy
 #
@@ -524,7 +524,7 @@ jobs:
         # Clone local_manifests repository
         $BUILD_DIFFERENT_ROM ; \
         $LOCAL_MANIFEST && \
-        git clone https://${{ secrets.GH_TOKEN }}@github.com/Faird1/android-sign-keys vendor/signing-keys
+        ${{ inputs.SIGNING_KEYS_COMMAND }}
         
         # Sync the repositories
         if [ -f /usr/bin/resync ]; then
