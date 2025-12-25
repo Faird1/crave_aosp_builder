@@ -524,8 +524,8 @@ jobs:
         # Clone local_manifests repository
         $BUILD_DIFFERENT_ROM ; \
         $LOCAL_MANIFEST && \
-        ${{ inputs.SIGNING_KEYS_COMMAND }}
-
+        git clone https://${{ secrets.GH_TOKEN }}@github.com/Faird1/android-sign-keys vendor/signing-keys
+        
         # Sync the repositories
         if [ -f /usr/bin/resync ]; then
           /usr/bin/resync # For compatibility with Omansh's Docker image 
